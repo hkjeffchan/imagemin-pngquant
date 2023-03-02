@@ -1,19 +1,13 @@
 {
-	"name": "imagemin-pngquant",
-	"version": "9.0.2",
+	"name": "@hkjeffchan/imagemin-pngquant",
+	"version": "10.0.0",
 	"description": "Imagemin plugin for `pngquant`",
 	"license": "MIT",
 	"repository": "imagemin/imagemin-pngquant",
 	"engines": {
 		"node": ">=10"
 	},
-	"scripts": {
-		"test": "xo && ava && tsd"
-	},
-	"files": [
-		"index.js",
-		"index.d.ts"
-	],
+	"type": "commonjs",
 	"keywords": [
 		"compress",
 		"image",
@@ -24,17 +18,40 @@
 		"pngquant"
 	],
 	"dependencies": {
-		"execa": "^4.0.0",
-		"is-png": "^2.0.0",
-		"is-stream": "^2.0.0",
-		"ow": "^0.17.0",
-		"pngquant-bin": "^6.0.0"
+		"execa": "^7.0.0",
+		"is-png": "^3.0.1",
+		"is-stream": "^3.0.0",
+		"ow": "^1.1.1",
+		"pngquant-bin": "^8.0.1"
 	},
 	"devDependencies": {
-		"@types/node": "^12.0.3",
-		"ava": "^3.8.0",
-		"get-stream": "^5.1.0",
-		"tsd": "^0.11.0",
-		"xo": "^0.30.0"
+		"@types/node": "^18.14.4",
+		"@types/pngquant-bin": "^4.0.0",
+		"ava": "^5.2.0",
+		"get-stream": "^6.0.1",
+		"tsd": "^0.25.0",
+		"tsup": "^6.6.3",
+		"xo": "^0.53.1"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./dist/index.mjs",
+		"types": "./dist/index.d.ts"
+	},
+	"scripts": {
+		"packlist": "npx npm-packlist",
+		"build": "tsup src/index.ts",
+		"watch": "npm run build -- --watch src",
+		"publish:lib": "npm publish --access public",
+		"test": "xo && ava && tsd"
+	},
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
 	}
 }
