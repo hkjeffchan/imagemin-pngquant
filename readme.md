@@ -2,32 +2,29 @@
 
 > [Imagemin](https://github.com/imagemin/imagemin) plugin for [`pngquant`](https://github.com/kornelski/pngquant)
 
-
 ## Install
 
 ```
+Install the [`pngquant`](https://github.com/kornelski/pngquant) binary on the target system. You need to specify the exact path to execute.
+
 $ npm install imagemin-pngquant
 ```
-
 
 ## Usage
 
 ```js
-const imagemin = require('imagemin');
-const imageminPngquant = require('imagemin-pngquant');
+const imagemin = require("imagemin");
+const imageminPngquant = require("imagemin-pngquant");
 
 (async () => {
-	await imagemin(['images/*.png'], {
-		destination: 'build/images',
-		plugins: [
-			imageminPngquant()
-		]
+	await imagemin(["images/*.png"], {
+		destination: "build/images",
+		plugins: [imageminPngquant()],
 	});
 
-	console.log('Images optimized');
+	console.log("Images optimized");
 })();
 ```
-
 
 ## API
 
@@ -38,6 +35,12 @@ Returns `Promise<Buffer>`.
 #### options
 
 Type: `object`
+
+##### binaryPath
+
+Type: `string`<br />
+Default: NO DEFAULT. YOU MUST PASS THIS VALUE!
+set the full path to pngquant executable (e.g. /opt/homebrew/bin/pngquant)
 
 ##### speed
 
