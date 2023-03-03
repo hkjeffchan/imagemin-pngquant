@@ -1,5 +1,10 @@
 interface Options {
     /**
+     *   set the full path to pngquant executable
+     * @example /opt/homebrew/bin/pngquant
+     */
+    binaryPath: string;
+    /**
     Speed `10` has 5% lower quality, but is about 8 times faster than the default. Speed `11` disables dithering and lowers compression level.
 
     Values: `1` (brute-force) to `11` (fastest)
@@ -46,6 +51,6 @@ interface Options {
     */
     verbose?: boolean;
 }
-declare const imageminPngquant: (options?: Options) => (input: Buffer) => Promise<Buffer>;
+declare const imageminPngquant: (options: Options) => (input: Buffer) => Promise<Buffer>;
 
 export { Options, imageminPngquant as default };

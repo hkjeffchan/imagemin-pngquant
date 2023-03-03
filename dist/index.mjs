@@ -1,5 +1,5 @@
 // src/index.ts
-var imageminPngquant = (options = {}) => async (input) => {
+var imageminPngquant = (options) => async (input) => {
   const isBuffer = Buffer.isBuffer(input);
   const isPng = await import("is-png");
   const isStream = await import("is-stream");
@@ -64,8 +64,7 @@ var imageminPngquant = (options = {}) => async (input) => {
     }
   }
   const execa = await import("execa");
-  const pngquant = await import("pngquant-bin");
-  const subprocess = await execa.execa(pngquant.default, args, {
+  const subprocess = await execa.execa(options.binaryPath, args, {
     encoding: null,
     maxBuffer: Infinity,
     input
