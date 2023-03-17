@@ -1,6 +1,9 @@
-# imagemin-pngquant ![GitHub Actions Status](https://github.com/imagemin/imagemin-pngquant/workflows/test/badge.svg?branch=master)
+# imagemin-pngquant
 
 > [Imagemin](https://github.com/imagemin/imagemin) plugin for [`pngquant`](https://github.com/kornelski/pngquant)
+> Forrked from https://github.com/imagemin/imagemin-pngquant
+> Repackage for cjs support and updated dependencies
+> Remove shipped binary and require manual installation of pngquant now so that you can always get a updated version yourself
 
 ## Install
 

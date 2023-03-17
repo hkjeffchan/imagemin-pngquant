@@ -1,9 +1,9 @@
 {
 	"name": "@hkjeffchan/imagemin-pngquant",
-	"version": "11.0.1",
+	"version": "11.0.2",
 	"description": "Imagemin plugin for `pngquant`",
 	"license": "MIT",
-	"repository": "imagemin/imagemin-pngquant",
+	"repository": "hkjeffchan/imagemin-pngquant",
 	"engines": {
 		"node": ">=10"
 	},
@@ -18,13 +18,13 @@
 		"pngquant"
 	],
 	"dependencies": {
-		"execa": "^7.0.0",
+		"execa": "^7.1.1",
 		"is-png": "^3.0.1",
 		"is-stream": "^3.0.0",
 		"ow": "^1.1.1"
 	},
 	"devDependencies": {
-		"@types/node": "^18.14.4",
+		"@types/node": "^18.15.3",
 		"ava": "^5.2.0",
 		"get-stream": "^6.0.1",
 		"tsd": "^0.25.0",
